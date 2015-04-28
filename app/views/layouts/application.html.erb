@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Cloud Quiz</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <div id="wrap">
+  <ul class="nav nav-pills pull-right" style="padding-right: 10px;">
+  <% if user_signed_in? %>
+    <br/>
+    <div>
+      <%= "You are  logged in as #{current_user.email}" %>
+    </div>
+    <br/>
+    <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+    <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+  <% else %>
+    <li><%= link_to "Sign in", new_user_session_path %></li>
+    <li><%= link_to "Sign up", new_user_registration_path %></li>
+  <% end %>
+</ul>
+</head>
+<body>
+  <div class="container-narrow">
+  <div class="masthead">
+   
+    <h3 class="muted"><a href ="/"><%=image_tag("logo.png", alt: "Cloud Quiz", width: "200px", height: "170px")%></a></h3>
+  </div>
+  <hr />
+  <%= yield %>
+  </div>
+  </div>
+  
+  
+     <div class="footer_bt">
+  <div class="container">
+    <br/>
+    <p class="text-muted center">&copy David Kirwan - x11347061 2015.</p>
+  </div>
+</div>
+
+
+</body>
+</html>

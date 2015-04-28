@@ -1,0 +1,25 @@
+<h1>Quiz</h1>
+<br/>
+<center><div>
+  <p><%= @quiz[:question] %></p>
+
+<%= form_tag(:action => "check") do %>
+
+<%= number_field_tag(:answer) %>
+<%= submit_tag("Submit") %>
+<% end %>
+<br/>
+  <hr/>
+
+<p> Your score is <%= @score1 %></p>
+  <br/>
+  <p> You are on level <%= @level %> out of 8 levels</p>
+  <br/>
+  <p>You are <%= @progress %>% complete!</p>
+<div class="active progress progress-success progress-striped" style="width: 30%!important;">
+<div class="animate-width-to progress-bar progress-bar-success" data-animate-length="200" data-animate-width-to="100%" style="width: <%= @progress %>%">
+
+</div>
+</div>
+
+  </div></center>

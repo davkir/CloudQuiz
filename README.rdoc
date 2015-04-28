@@ -1,0 +1,15 @@
+== README
+
+The main purpose of this project is to test the user’s knowledge of four different sections of math such as addition, subtraction, multiplication and division. The more correct answers the user gives, the higher their score and then they can progress to the next level. The objectives for the project were to auto generate questions for the user based on their score and progression in the quiz. The higher the user’s score, the more difficult the questions get. The user cannot progress to the next level until they have answered ten questions right in each level.
+
+
+
+== Custom Gems
+
+
+I created two custom gems. One that gets the user’s score and determines which type of questions need to be generated such as addition, subtraction, multiplication or division. It then determines whether it’s the easy or hard level within the section. It then generates the relevant question and answer and passes the array back to the Controller so it can display the question to the user and it also uses the answer part to check if the user’s answer was correct. The other gem calculates the user’s percentage of progression and displays it to the view. I also included a progression bar that visually displays the user’s progression. This also uses the gem to get the percentage of completion.
+
+== External Gems
+
+I included several external gems to create this application such as RailsAdmin for the “/admin” administration section of the application, pg to create PostgreSQL, databases and devise to help with the login system so that users can save their progress and login later to finish the quiz.
+

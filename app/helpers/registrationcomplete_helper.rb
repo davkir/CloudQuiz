@@ -1,0 +1,2 @@
+module RegistrationcompleteHelper
+end
